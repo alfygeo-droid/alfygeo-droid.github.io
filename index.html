@@ -2,10 +2,182 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My GitHub Website</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #f4f4f5;
+            background: #242424;
+            line-height: 1.6;
+        }
+
+        main {
+            width: min(1080px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 56px 0;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(220px, 340px) 1fr;
+            gap: 40px;
+            align-items: center;
+            min-height: calc(100vh - 112px);
+        }
+
+        .profile-photo {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border: 4px solid #3f3f46;
+            border-radius: 8px;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
+            background: #18181b;
+        }
+
+        .intro {
+            max-width: 650px;
+        }
+
+        .eyebrow {
+            margin-bottom: 12px;
+            color: #a7f3d0;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin-bottom: 18px;
+            font-size: clamp(2.5rem, 8vw, 5.5rem);
+            line-height: 0.95;
+        }
+
+        .intro p {
+            color: #d4d4d8;
+            font-size: 1.12rem;
+        }
+
+        section {
+            padding: 56px 0;
+            border-top: 1px solid #3f3f46;
+        }
+
+        h2 {
+            margin-bottom: 18px;
+            color: #ffffff;
+            font-size: 2rem;
+        }
+
+        .about {
+            max-width: 780px;
+            color: #d4d4d8;
+            font-size: 1.05rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            max-width: 780px;
+        }
+
+        .contact-link {
+            display: block;
+            padding: 18px 20px;
+            color: #f4f4f5;
+            text-decoration: none;
+            background: #303030;
+            border: 1px solid #4b5563;
+            border-radius: 8px;
+            transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+        }
+
+        .contact-link:hover,
+        .contact-link:focus {
+            background: #353535;
+            border-color: #a7f3d0;
+            transform: translateY(-2px);
+            outline: none;
+        }
+
+        .contact-label {
+            display: block;
+            margin-bottom: 4px;
+            color: #a7f3d0;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .contact-value {
+            word-break: break-word;
+        }
+
+        @media (max-width: 760px) {
+            main {
+                padding: 32px 0;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 28px;
+                min-height: auto;
+            }
+
+            .profile-photo {
+                max-width: 320px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, world! Welcome to my new website.</h1>
+    <main>
+        <header class="hero">
+            <img class="profile-photo" src="profile-photo.jpeg" alt="My photo">
+
+            <div class="intro">
+                <p class="eyebrow">Personal Website</p>
+                <h1>Hello, world!</h1>
+                <p>Welcome to my new website. This is a simple space to introduce myself, share what I do, and make it easy to contact me.</p>
+            </div>
+        </header>
+
+        <section>
+            <h2>About Me</h2>
+            <p class="about">
+                Write a short introduction about yourself here. You can mention your studies, work, interests, skills, projects, or anything you want visitors to know about you.
+            </p>
+        </section>
+
+        <section>
+            <h2>Contact</h2>
+            <div class="contact-grid">
+                <a class="contact-link" href="tel:+919744589487">
+                    <span class="contact-label">Phone</span>
+                    <span class="contact-value">+91 97445 89487</span>
+                </a>
+
+                <a class="contact-link" href="https://www.instagram.com/your_instagram_id/" target="_blank" rel="noopener noreferrer">
+                    <span class="contact-label">Instagram</span>
+                    <span class="contact-value">@your_instagram_id</span>
+                </a>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
 
